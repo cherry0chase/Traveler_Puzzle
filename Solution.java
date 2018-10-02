@@ -11,8 +11,8 @@ public class Solution {
 	}
 	
 	public void show(Grid grid)	{
-		System.out.println(toString());
-		// System.out.println(toStringShow(grid));
+		// System.out.println(toString());
+		System.out.println(toStringShow(grid));
 	}
 	
 	public String toString()	{
