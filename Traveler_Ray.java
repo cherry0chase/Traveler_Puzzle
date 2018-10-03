@@ -13,7 +13,7 @@ public class Traveler_Ray {
 				DFS(grid, stack, n);
 			}
 		}
-		stack.pop();	// shouldn't have to do this
+		stack.pop();	// shouldn't have to do this ... yes, we should, since push is outside the DFS() call.
 	}
 	
 	public static void main(String[] args) {

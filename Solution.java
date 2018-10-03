@@ -2,8 +2,10 @@ import java.util.*;
 
 public class Solution {
 	// better to use another collection class
+	// stack represents the solution.
 	private Stack<Vertex> stack;
-	
+
+	// saves the solution by copying s	
 	public Solution(Stack<Vertex> s){
 		stack = new Stack<Vertex>();
 		for(Vertex v : s)
@@ -22,7 +24,11 @@ public class Solution {
 		return buf.toString();
 	}
 	
+	/*
+	 * returns a string to visualize the solution.
+	 */ 
 	public String toStringShow(Grid grid)	{
+		// first, gets a string to visualize the empty grid
 		StringBuilder g = new StringBuilder(grid.toString());
 		int size = grid.size();
 		
@@ -31,7 +37,7 @@ public class Solution {
 			Vertex v2 = stack.get(i);
 			int x1 = v1.getX(), y1 = v1.getY();
 			int x2 = v2.getX(), y2 = v2.getY();
-			// either x1==x2 or y1==y2
+			// either x1==x2 or y1==y2: replace ' ' with '|' or '-'
 			if(x1 == x2)	{ // x1==x2: 1 step down or up from (x1,y1) 
 				// locate (x1,y1)
 				int index = 4 * size * y1 + 2 * x1;
@@ -51,6 +57,5 @@ public class Solution {
 		}
 		
 		return g.toString();		
-		// return toString() + "\n" + g.toString();
 	}
 }

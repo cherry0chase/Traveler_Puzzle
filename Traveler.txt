@@ -1,25 +1,28 @@
 Solve the following problem
 
-Figure out a travel plan to go through each and every city exactly once with only horizontal and vertical moves but no diagonal ones. The X should be excluded. 
+Figure out a travel plan to go through each and every city exactly once with only horizontal and vertical moves but no diagonal ones. Starting point is (0,0). X should be excluded. 
 
-* X * * *
-* * * * *
-* * * * *
-* * * * *
-* * * * *
+Here is a grid of 4x4 cities, as an example.
 
+* X * * 
 
-* X *-*-*
-|   | | |
-*-*-*-*-*
-| | | | |
-*-*-*-*-*
-| | | | |
-*-*-*-*-*
-| | | | |
-*-*-*-*-*
+* * * * 
 
-For example, for a 4x4 one, here is a solution
+* * * * 
+
+* * * * 
+
+Here is the grid showing all _possible_ moves.
+
+* X *-*
+|   | |
+*-*-*-*
+| | | |
+*-*-*-*
+| | | |
+*-*-*-*
+
+Here is an example solution.
 
 * X *-*
 |   | |
@@ -29,4 +32,3 @@ For example, for a 4x4 one, here is a solution
 |   | |
 *-*-* *
 
-Reference: https://en.wikipedia.org/wiki/Depth-first_search

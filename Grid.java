@@ -3,8 +3,10 @@ import java.util.*;
 public class Grid {
 	private Vertex[][] vertices;
 	private int size;
+	// Hole is assumed to always be (1,0)
 	private int hole_x = 1;
 	private int hole_y = 0;
+	// Alaways starts from (0,0)
 	private int starting_x = 0;
 	private int starting_y = 0;
 	private SolutionSet solutions;
@@ -25,6 +27,9 @@ public class Grid {
 		solutions = new SolutionSet(this);
 	}
 
+	/*
+	 * Build the graph by populating neighbor list for each vertex, excluding the hole and heeding the boundaries.
+	 */
 	private void buildGraph()	{
 		for(int i=0; i<size; i++)	{
 			for(int j=0; j<size; j++)	{
@@ -51,6 +56,9 @@ public class Grid {
 		}
 	}
 	
+	/*
+	 * returns a string visualizing the grid
+	 */
 	public String toString()	{
 		StringBuilder buf = new StringBuilder();
 		
@@ -139,6 +147,9 @@ public class Grid {
 		return size;
 	}
 
+	/* 
+	 * tests the class with the example of 4x4 grid
+	 */ 
 	public static void main(String[] args) {
 		Grid grid = new Grid(4);
 		System.out.println("Grid " + grid.size() + " created: starting: " + grid.getStartingVertex() + ", hole: " + grid.getHole());
